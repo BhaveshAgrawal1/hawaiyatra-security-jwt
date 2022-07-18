@@ -12,14 +12,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.dev.models.AdminDetails;
-import com.dev.repositories.AdminRepositorie;
+import com.dev.models.JwtRequest;
+import com.dev.repositories.JwtRepositorie;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
 	
 	@Autowired
-	private AdminRepositorie repo;
+	private JwtRepositorie repo;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -27,7 +27,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 			Set<SimpleGrantedAuthority> authorities = new HashSet<>();
 	        authorities.add(new SimpleGrantedAuthority("ROLE_" + "ADMIN"));
 	        
-	        Optional<AdminDetails>  details = repo.findById("admin");
+	        Optional<JwtRequest>  details = repo.findById("admin");
 	        
 
 	        return new User("admin", details.get().getPassword(), authorities);

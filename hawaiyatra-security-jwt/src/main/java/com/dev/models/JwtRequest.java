@@ -2,17 +2,17 @@ package com.dev.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class JwtRequest implements Serializable {
 
 	private static final long serialVersionUID = 5926468583005150707L;
 	
+	@Id
 	private String username;
 	private String password;
-	
-//	{
-//		"username": "sdfksjdflkjs",
-//		"password": "kldfjgdkt"
-//	}
 	
 	
 	//need default constructor for JSON Parsing

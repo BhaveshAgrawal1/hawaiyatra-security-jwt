@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dev.client.AdminClient;
 import com.dev.models.FlightDetails;
+import com.dev.models.StatusUpdate;
 
 @RestController
 @RequestMapping("/api/demo")
-public class DemoController {
+public class AdminClientController {
 	
 	@Autowired
 	private AdminClient admin;
@@ -32,12 +33,12 @@ public class DemoController {
 	}
 	
 	@PutMapping("/block")
-	public String blockFlight(@RequestBody FlightDetails details) {
+	public String blockFlight(@RequestBody StatusUpdate details) {
 		return admin.blockFlight(details);
 	}
 
 	@PutMapping("/unblock")
-	public String unblockFlight(@RequestBody FlightDetails details) {
+	public String unblockFlight(@RequestBody StatusUpdate details) {
 		return admin.unblockFlight(details);
 	}
 	

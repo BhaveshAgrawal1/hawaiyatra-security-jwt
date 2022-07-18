@@ -7,11 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 public class FlightDetails {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private Integer flight_number;
 	private String flight_name;
@@ -26,7 +23,7 @@ public class FlightDetails {
 	private LocalDateTime created_date;
 	private LocalDateTime modify_date;
 	private String comment;
-	private Integer status;
+	private Integer status = 1;
 
 
 	 

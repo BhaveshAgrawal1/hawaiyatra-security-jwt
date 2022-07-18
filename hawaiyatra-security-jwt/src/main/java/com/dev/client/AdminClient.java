@@ -21,10 +21,10 @@ public interface AdminClient {
 	public String updateFlight(@RequestBody FlightDetails details);
 	
 	@PutMapping("/flight/block")
-	public String blockFlight(@RequestBody FlightDetails details) ;
+	public String blockFlight(@RequestBody StatusUpdate details) ;
 	
 	@PutMapping("/flight/unblock")
-	public String unblockFlight(@RequestBody FlightDetails details) ;
+	public String unblockFlight(@RequestBody StatusUpdate details) ;
 	
 	@GetMapping("/flight/view")
 	public List<FlightDetails> viewFlight();
