@@ -16,7 +16,7 @@ import com.dev.models.FlightDetails;
 import com.dev.models.StatusUpdate;
 
 @RestController
-@RequestMapping("/api/demo")
+@RequestMapping("/api/service")
 public class AdminClientController {
 	
 	@Autowired

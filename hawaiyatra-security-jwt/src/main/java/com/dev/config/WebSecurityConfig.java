@@ -59,7 +59,7 @@ public class WebSecurityConfig {
 
 		.authorizeRequests()
 		.antMatchers("/authenticate").permitAll()
-		.antMatchers("/api/demo/**").access("hasRole('ADMIN')")
+		.antMatchers("/api/service/**").access("hasRole('ADMIN')")
 		
 				// all other requests need to be authenticated
 				.anyRequest().authenticated().and().
